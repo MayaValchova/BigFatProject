@@ -35,7 +35,7 @@ public class Demo {
 		}else if (choosenGame == '2') {
 
 			
-		}// if za 2, 3, 4, 5
+		}// if za 2, 3,   4,    5,
 		
 	//	board.generateBoard(boardField, rows, cols, mines)
 

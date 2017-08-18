@@ -1,7 +1,5 @@
 # BigFatProject
 the project - part 2
-# BigFatProject
-the project - part 2
 OOP Big Fat Project
 
 Да се реализират в един проект следните бордови игри:

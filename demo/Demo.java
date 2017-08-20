@@ -26,7 +26,7 @@ public class Demo {
 
 			BoardTicTacToe boardTicTacToe = new BoardTicTacToe(rowsCount, colsCount);
 			PlayerPerson gosho = new PlayerPerson("Gosho");
-			PlayerPC gamerPC = new PlayerPC("PC");
+			PlayerPC gamerPC = new PlayerPC("CPU");
 			
 			board = boardTicTacToe;
 			gamerOne = gosho;

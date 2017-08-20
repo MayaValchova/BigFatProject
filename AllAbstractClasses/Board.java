@@ -42,7 +42,7 @@ public abstract class Board implements IGenerateBoard, IPrint, IPlay {
 			this.playerPC = playerPC;
 		}
 	}
-
+	
 
 	public int getRows() {
 		return rows;

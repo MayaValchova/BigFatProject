@@ -3,7 +3,7 @@ package demo;
 import java.util.Scanner;
 
 import AllAbstractClasses.*;
-import SeaChess.*;
+import ticTacToe.*;
 
 public class Demo {
 
@@ -24,11 +24,11 @@ public class Demo {
 
 		if (choosenGame == '1') {
 
-			BoardSeaChess boardSeaChess = new BoardSeaChess(rowsCount, colsCount);
+			BoardTicTacToe boardTicTacToe = new BoardTicTacToe(rowsCount, colsCount);
 			PlayerPerson gosho = new PlayerPerson("Gosho");
 			PlayerPC gamerPC = new PlayerPC("PC");
 			
-			board = boardSeaChess;
+			board = boardTicTacToe;
 			gamerOne = gosho;
 			gamerTwo=gamerPC;
 
@@ -84,10 +84,10 @@ public class Demo {
 	private static char chooseGame() {
 
 		Scanner sc = new Scanner(System.in);
-		char choosenGame = '0';
+		char chosenGame = '0';
 		System.out.println("Welcome!!! Lets Play!!! ");
 		System.out.println();
-		System.out.println("1. Seà chess");
+		System.out.println("1. Tic Tac Toe");
 		System.out.println("2. Dots and Boxes");
 		System.out.println("3. Minesweeper");
 		System.out.println("4. Fox and Hounds");
@@ -97,10 +97,10 @@ public class Demo {
 		System.out.println();
 		do {
 			System.out.println("Choose your Game: ");
-			choosenGame = sc.next().charAt(0);
+			chosenGame = sc.next().charAt(0);
 		
-		} while ((choosenGame < 49 || choosenGame > 53) && (choosenGame != 113 && choosenGame != 81));
-		return choosenGame;
+		} while ((chosenGame < 49 || chosenGame > 53) && (chosenGame != 113 && chosenGame != 81));
+		return chosenGame;
 	}
 
 }

@@ -1,4 +1,4 @@
-package SeaChess;
+package ticTacToe;
 
 import java.util.Scanner;
 
@@ -17,7 +17,7 @@ public class PlayerPC extends Player {
 	}
 
 	public void setName(String name) {
-		this.name = "*PC";
+		this.name = "CPU";
 	}
 	
 	

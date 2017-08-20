@@ -1,7 +1,7 @@
 package AllAbstractClasses;
 
 public abstract class Board implements IGenerateBoard, IPrint, IPlay {
-//Adding some text - Ivan
+
 	private int rows;
 	private int cols;
 	private char[][] boardField;

@@ -1,8 +1,8 @@
-package SeaChess;
+package ticTacToe;
 
 import java.util.Scanner;
 import AllAbstractClasses.*;
-import SeaChess.BoardSeaChess;
+import ticTacToe.BoardTicTacToe;
 
 public class PlayerPerson extends Player {
 

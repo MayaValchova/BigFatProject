@@ -1,10 +1,10 @@
-package SeaChess;
+package ticTacToe;
 
 import AllAbstractClasses.*;
 
-public class BoardSeaChess extends Board {
+public class BoardTicTacToe extends Board {
 
-	public BoardSeaChess(int rows, int cols) {
+	public BoardTicTacToe(int rows, int cols) {
 		super(rows, cols);
 
 	}

@@ -4,17 +4,21 @@ import java.util.Scanner;
 
 import AllAbstractClasses.*;
 import ticTacToe.*;
+import dotsAndBoxes.*;
+
 
 public class Demo {
 
 	public static void main(String[] args) {
+		
+	
 
-		char choosenGame = chooseGame(); // izbor na igrata
+		char chosenGame = choseGame(); // izbor na igrata
 		int minCount = 3;
 		int maxCount = 20;
 
-		int rowsCount = chooseRowsCount(minCount, maxCount); // izbor broi redove
-		int colsCount = chooseColsCount(minCount, maxCount); // izbor broi koloni
+		int rowsCount = choseRowsCount(minCount, maxCount); // izbor broi redove
+		int colsCount = choseColsCount(minCount, maxCount); // izbor broi koloni
 		// int mineCount=chooseMinesCount(choosenGame, minCount, maxCount);//za towa posle
 		
 
@@ -22,7 +26,7 @@ public class Demo {
 		Player gamerOne = null;
 		Player gamerTwo = null;
 
-		if (choosenGame == '1') {
+		if (chosenGame == '1') {
 
 			BoardTicTacToe boardTicTacToe = new BoardTicTacToe(rowsCount, colsCount);
 			PlayerPerson gosho = new PlayerPerson("Gosho");
@@ -32,12 +36,17 @@ public class Demo {
 			gamerOne = gosho;
 			gamerTwo=gamerPC;
 
-		}else if (choosenGame == '2') {
-
+		}else if (chosenGame == '2') {
+			BoardDotsAndBoxes boardBoardDotsAndBoxes  = new BoardDotsAndBoxes (rowsCount, colsCount);
+			board = boardBoardDotsAndBoxes;
+			PlayerPersonDotsAndBoxes gosho = new PlayerPersonDotsAndBoxes("A");
+			gamerOne = gosho;
 			
+			PlayerPCDotsAndBoxes gamerPC = new PlayerPCDotsAndBoxes("B");
+			gamerTwo=gamerPC;
 		}// if za 2, 3, 4, 5
 		
-	//	board.generateBoard(boardField, rows, cols, mines)
+		//board.generateBoard(boardField, rows, cols, mines) za 3
 
 		board.setPlayerPerson(gamerOne);
 		gamerOne.setGame(board);
@@ -46,19 +55,22 @@ public class Demo {
 		board.printClient();
 		
 		
-		gamerOne.play(gamerOne);
-		board.play(gamerOne);
-		//board.printClient();
+		while(!board.isGameOver()) {
 		
-		gamerTwo.play(gamerTwo);
-		board.play(gamerTwo);
+			gamerOne.play(gamerOne);
+			board.play(gamerOne);
 		
+			if (!board.isGameOver()) {
+				gamerTwo.play(gamerTwo);
+				board.play(gamerTwo);
+			}
+		}
 		
-		// }
+
 
 	}
 
-	private static int chooseColsCount(int minCount, int maxCount) {
+	private static int choseColsCount(int minCount, int maxCount) {
 
 		Scanner sc = new Scanner(System.in);
 		int colsCount = 0;
@@ -69,7 +81,7 @@ public class Demo {
 		return colsCount;
 	}
 
-	private static int chooseRowsCount(int minCount, int maxCount) {
+	private static int choseRowsCount(int minCount, int maxCount) {
 
 		Scanner sc = new Scanner(System.in);
 		int rowsCount = 0;
@@ -81,7 +93,7 @@ public class Demo {
 
 	}
 
-	private static char chooseGame() {
+	private static char choseGame() {
 
 		Scanner sc = new Scanner(System.in);
 		char chosenGame = '0';

@@ -107,13 +107,15 @@ public class BoardDotsAndBoxes extends Board {
 			if (player.getName().charAt(0) == 'A') {
 				System.out.println("Pleyer YOU WIN!!!  Result " + counterPlayer + " from " + counterGame + "!");
 			} else {
-				System.out.println("Player LOSE!!!  Result " + (counterGame-counterPlayer) + " from " + counterGame + "!");
+				System.out.println(
+						"Player LOSE!!!  Result " + (counterGame - counterPlayer) + " from " + counterGame + "!");
 			}
 		} else if (counterPlayer < counterGame - counterPlayer) {
 			if (player.getName().charAt(0) == 'A') {
 				System.out.println("Pleyer YOU LOSE!!!  Result " + counterPlayer + " from " + counterGame + "!");
 			} else {
-				System.out.println("Player YOU  WIN!!!  Result " +  (counterGame-counterPlayer) + " from " + counterGame + "!");
+				System.out.println(
+						"Player YOU  WIN!!!  Result " + (counterGame - counterPlayer) + " from " + counterGame + "!");
 			}
 
 		} else {
@@ -126,6 +128,7 @@ public class BoardDotsAndBoxes extends Board {
 
 	public void changeField(Player player) {
 
+		boolean helperHasleter = false; //
 		// what marker to put "|" or "-"
 		int helpRows = (player.getGamerRowOne() + player.getGamerRowTwo()) / 2;
 		int helpCols = (player.getGamerColOne() + player.getGamerColTwo()) / 2;
@@ -146,6 +149,7 @@ public class BoardDotsAndBoxes extends Board {
 					&& this.getBoardField()[helpRows + 1][helpCols + 1] == '|'
 					&& this.getBoardField()[helpRows + 1][helpCols - 1] == '|') {
 				this.getBoardField()[helpRows + 1][helpCols] = player.getName().charAt(0);
+				helperHasleter = false;
 			}
 		}
 
@@ -154,6 +158,7 @@ public class BoardDotsAndBoxes extends Board {
 					&& this.getBoardField()[helpRows - 1][helpCols + 1] == '|'
 					&& this.getBoardField()[helpRows - 1][helpCols - 1] == '|') {
 				this.getBoardField()[helpRows - 1][helpCols] = player.getName().charAt(0);
+				helperHasleter = true;
 			}
 		}
 
@@ -162,6 +167,7 @@ public class BoardDotsAndBoxes extends Board {
 					&& this.getBoardField()[helpRows][helpCols + 2] == '|'
 					&& this.getBoardField()[helpRows + 1][helpCols + 1] == '_') {
 				this.getBoardField()[helpRows][helpCols + 1] = player.getName().charAt(0);
+				helperHasleter = true;
 			}
 		}
 
@@ -170,6 +176,7 @@ public class BoardDotsAndBoxes extends Board {
 					&& this.getBoardField()[helpRows][helpCols - 2] == '|'
 					&& this.getBoardField()[helpRows + 1][helpCols - 1] == '_') {
 				this.getBoardField()[helpRows][helpCols - 1] = player.getName().charAt(0);
+				helperHasleter = true;
 			}
 		}
 
@@ -181,13 +188,14 @@ public class BoardDotsAndBoxes extends Board {
 						&& this.getBoardField()[helpRows - 1][helpCols + 1] == '|'
 						&& this.getBoardField()[helpRows - 1][helpCols - 1] == '|') {
 					this.getBoardField()[helpRows - 1][helpCols] = player.getName().charAt(0);
-
+					helperHasleter = true;
 				}
 
 				if (this.getBoardField()[helpRows + 2][helpCols] == '_'
 						&& this.getBoardField()[helpRows + 1][helpCols + 1] == '|'
 						&& this.getBoardField()[helpRows + 1][helpCols - 1] == '|') {
 					this.getBoardField()[helpRows + 1][helpCols] = player.getName().charAt(0);
+					helperHasleter = true;
 				}
 
 			} else if (this.getBoardField()[helpRows][helpCols] == '|') {
@@ -196,6 +204,8 @@ public class BoardDotsAndBoxes extends Board {
 						&& this.getBoardField()[helpRows][helpCols - 2] == '|'
 						&& this.getBoardField()[helpRows + 1][helpCols - 1] == '_') {
 					this.getBoardField()[helpRows][helpCols - 1] = player.getName().charAt(0);
+					helperHasleter = true;
+
 				}
 
 			}
@@ -205,6 +215,15 @@ public class BoardDotsAndBoxes extends Board {
 					&& this.getBoardField()[helpRows + 1][helpCols + 1] == '_') {
 				this.getBoardField()[helpRows][helpCols + 1] = player.getName().charAt(0);
 
+				helperHasleter = true;
+
+			}
+			if (helperHasleter) {
+				if (!isGameOver()) {
+					printClient();
+				}
+				player.play(player);
+				this.play(player);
 			}
 
 		}

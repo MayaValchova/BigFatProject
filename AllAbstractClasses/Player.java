@@ -62,7 +62,20 @@ public abstract class Player implements IPlay, IPrint {
 		this.gamerColOne = gamerCol;
 	}
 
+	public int getGamerRowTwo() {
+		return gamerRowTwo;
+	}
+	public void setGamerRowTwo(int gamerRow) {
+		this.gamerRowTwo = gamerRow;
+	}
+
 	
+	public int getGamerColTwo() {
+		return gamerColTwo;
+	}
+	public void setGamerColTwo(int gamerCol) {
+		this.gamerColTwo = gamerCol;
+	}
 	
 	public static String enterName() {
 		return "Anonymous";

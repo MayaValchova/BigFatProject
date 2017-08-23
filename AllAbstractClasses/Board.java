@@ -7,10 +7,13 @@ public abstract class Board implements IGenerateBoard, IPrint, IPlay {
 	private char[][] boardField;
 	private Player playerPerson;
 	private Player playerPC;
+	private boolean isGameOver;
 
 	// private static int rowsBoard=rows;
 	
 	
+	
+
 	
 
 	public Board(int rows, int cols) {
@@ -42,7 +45,7 @@ public abstract class Board implements IGenerateBoard, IPrint, IPlay {
 			this.playerPC = playerPC;
 		}
 	}
-	
+
 
 	public int getRows() {
 		return rows;
@@ -66,6 +69,14 @@ public abstract class Board implements IGenerateBoard, IPrint, IPlay {
 
 	public void setBoardField(char[][] board) {
 		this.boardField = board;
+	}
+	
+	public boolean isGameOver() {
+		return isGameOver;
+	}
+
+	public void setGameOver(boolean isGameOver) {
+		this.isGameOver = isGameOver;
 	}
 
 }

@@ -149,7 +149,7 @@ public class BoardDotsAndBoxes extends Board {
 					&& this.getBoardField()[helpRows + 1][helpCols + 1] == '|'
 					&& this.getBoardField()[helpRows + 1][helpCols - 1] == '|') {
 				this.getBoardField()[helpRows + 1][helpCols] = player.getName().charAt(0);
-				helperHasleter = false;
+				helperHasleter = true;
 			}
 		}
 
@@ -214,7 +214,6 @@ public class BoardDotsAndBoxes extends Board {
 					&& this.getBoardField()[helpRows][helpCols + 2] == '|'
 					&& this.getBoardField()[helpRows + 1][helpCols + 1] == '_') {
 				this.getBoardField()[helpRows][helpCols + 1] = player.getName().charAt(0);
-
 				helperHasleter = true;
 
 			}

@@ -44,9 +44,7 @@ public class Demo {
 			Player gamerOne = null;
 			Player gamerTwo = null;
 			
-			if(chosenGame == 'q' || chosenGame == 'Q') {
-				return;
-			}
+			
 
 			if (chosenGame == '1') {
 

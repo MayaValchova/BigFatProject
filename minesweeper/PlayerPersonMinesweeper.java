@@ -1,4 +1,4 @@
-package mineSweeper;
+package minesweeper;
 
 import java.util.Scanner;
 import AllAbstractClasses.*;

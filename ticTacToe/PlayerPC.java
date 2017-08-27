@@ -1,5 +1,6 @@
 package ticTacToe;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import AllAbstractClasses.*;
@@ -86,29 +87,14 @@ public class PlayerPC extends Player {
 		
 		public void makeMoove(Board game) {
 
-			
-
-			Scanner sc = new Scanner(System.in);
-			int r, c;
-			do {
-				System.out.println("Please, enter Row:");
-				r = sc.nextInt();
-			} while (r < 1|| r > this.getGame().getRows());
-			setGamerRowOne(r-1);
-			
-			do {
-				System.out.println("Please, enter Col:");
-				c = sc.nextInt();
-			} while (c < 1 || c > this.getGame().getCols());
-			
-			setGamerColOne(c-1);
-			
-			
-			
-		//	doMove(game.getBoardField(), getGamerRowOne(), getGamerColOne());
-		//	printClient();
-			
-		
+			Random r = new Random();
+			int row = r.nextInt(getGame().getRows());
+			int col = r.nextInt(getGame().getCols());		
+			do{
+				setGamerRowOne(row);
+				setGamerColOne(col);
+			} while(getGame().getBoardField()[row][col] != 0);
+	
 	}
 
 }

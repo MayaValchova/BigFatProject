@@ -40,7 +40,7 @@ public class PlayerPerson extends Player {
 		do {
 			System.out.println("Please, enter Row:");
 			r = sc.nextInt();
-		} while (r < 1|| r > this.getGame().getRows());
+		} while (r < 1 || r > this.getGame().getRows());
 		setGamerRowOne(r-1);
 		
 		do {
@@ -49,8 +49,7 @@ public class PlayerPerson extends Player {
 		} while (c < 1 || c > this.getGame().getCols());
 		
 		setGamerColOne(c-1);
-		
-		
+
 		
 	//	doMove(game.getBoardField(), getGamerRowOne(), getGamerColOne());
 	//	printClient();
@@ -145,8 +144,15 @@ public class PlayerPerson extends Player {
 
 	@Override
 	public void play(Player player) {
-		
-		makeMoove(this.getGame());
+		do{
+			makeMoove(this.getGame());
+			if(player.getGame().getBoardField()[player.getGamerRowOne()][player.getGamerColOne()] != 0) {
+				player.printClient();
+			System.out.println("Position is already taken!");
+			System.out.println("Please choose again!");
+			System.out.println();
+			}			
+		}while(player.getGame().getBoardField()[player.getGamerRowOne()][player.getGamerColOne()] != 0);
 		
 		
 	//	char[][] doMove((char[][] boardField, int gamerRow, int gamerCol)) {

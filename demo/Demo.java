@@ -5,7 +5,7 @@ import java.util.Scanner;
 import AllAbstractClasses.*;
 import ticTacToe.*;
 import dotsAndBoxes.*;
-import mineSweeper.*;
+import minesweeper.*;
 
 public class Demo {
 
